@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/G28XYZ/ex_react_redux_book#readme",
   "dependencies": {
-    "react": "^17.0.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "webpack": "^5.19.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -25,7 +27,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "react-dom": "^17.0.1",
-    "webpack": "^5.19.0"
+    "eslint": "^7.19.0",
+    "eslint-plugin-react": "^7.22.0"
   }
 }
