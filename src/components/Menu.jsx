@@ -1,4 +1,5 @@
 import Recipe from "./Recipe";
+
 const Menu = ({ recipes }) => (
 	<article>
 		<header>
@@ -11,4 +12,5 @@ const Menu = ({ recipes }) => (
 		</div>
 	</article>
 );
+
 export default Menu;

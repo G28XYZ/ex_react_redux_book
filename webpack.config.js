@@ -1,30 +1,26 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin"); //installed via npm
 const webpack = require("webpack");
+const path = require("path");
 
 module.exports = {
-	entry: "./src/index.js",
+	entry: "./src/index.jsx",
 	output: {
-		path: "dist/assets",
+		path: path.resolve(__dirname, "dist"),
 		filename: "bundle.js",
 		sourceMapFilename: "bundle.map",
 	},
-	devtool: "#source-map",
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /(\.js$|\.tsx?$)/,
 				exclude: /(node_modules)/,
-				loader: ["babel-loader"],
-				query: {
-					presets: ["env", "stage-0", "react"],
+				loader: "babel-loader",
+				options: {
+					presets: ["@babel/preset-env"],
+					plugins: ["@babel/plugin-transform-runtime"],
 				},
 			},
 		],
 	},
-	plugins: [
-		new webpack.optimize.UglifyJsPlugin({
-			sourceMap: true,
-			warnings: false,
-			mangle: true,
-		}),
-	],
+	plugins: [new HtmlWebpackPlugin({ template: "./index.html" })],
 };
